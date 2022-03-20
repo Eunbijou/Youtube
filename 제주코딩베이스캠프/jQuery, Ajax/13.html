@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .border {
+      border: 1px solid black;
+    }
+    #box {
+      width: 100px;
+      height: 100px;
+      opacity: 0.3;
+      background-color: red;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <h1>hello world</h1>
+  <p id="test">hello hello</p>
+  <ul>
+    <li>hello world</li>
+    <li>hello world</li>
+    <li>hello world</li>
+    <li>hello world</li>
+    <li>hello world</li>
+    <li>hello world</li>
+    <li>hello world</li>
+    <li>hello world</li>
+    <li>hello world</li>
+    <li>hello world</li>
+  </ul>
+
+  <input type="text" name="" id="userInput">
+  <input type="text" name="" id="userInput2">
+  <p id="userInputPrint"></p>
+  <button>눌러!</button>
+
+  <script>
+    $(function(){
+      $("div").click(function() {
+        $(this).hide();
+      });
+    });
+  </script>
+
+  <div class="wrapper">
+    <h1 class="title">TITLE</h1>
+    <ul class="items">
+      <li class="items">items 1</li>
+      <li class="items">items 2 </li>
+    </ul>
+  </div>
+  <button type="button" id="btn_ani">클릭해주세요!</button>
+  <div id="box"></div>
+  <script>
+    $('#test').html('<b>hello</b> world');
+    $("li:nth-child(4n)").css("color", "red");
+
+    $("button").click(function(){
+      const value = $("#userInput").val();
+      $("#userInput2").val(value);
+      $("#userInputPrint").text(value);
+    });
+
+    console.log($("div").children()[0].innerText = 'hello world');
+    $("div").append("Some appended text.");
+    $("ul").after('<h2>끝!</h2>');
+    $("ul").before('<h2>시작!</h2>');
+
+    $("ul").addClass("border");
+
+    $("ul").fadeOut(3000).fadeIn(3000);
+
+    $('#btn_ani').click(function() {
+      $('#box').animate({
+        width: '300px',
+        heighe: '300px',
+        opacity: 1,
+      }, 'slow');
+    });
+  </script>
+</body>
+</html>
